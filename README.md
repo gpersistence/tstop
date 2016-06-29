@@ -1,5 +1,7 @@
 #TSTOP
-This project contains the source code for the time-series topology data analysis framework and datasets for time-series characterization and classification as described in the paper:
+Release Date: June 2016
+
+This project contains the source code and datasets for the time-series topology data analysis framework for time-series characterization and classification as described in the paper:
 
 Seversky, Lee M., Shelby Davis, and Matthew Berger. 
 "On Time-Series Topological Data Analysis: New Data and Opportunities." 
@@ -24,13 +26,13 @@ year = {2016}
 
 From Arnur Nigmetov (Graz Unvirsity of Technology, Graz, Austria)
 
-Download
-[geom_bottleneck](https://bitbucket.org/grey_narn/geom_bottleneck/downloads)
-and extract to `tstop/ext/geom_dist/bottleneck` 
+Download and Extract
+[Hera] (https://bitbucket.org/grey_narn/hera/downloads)
 
-Download
-[geom_matching](https://bitbucket.org/grey_narn/geom_matching/downloads)
-and extract to `tstop/ext/geom_dist/wasserstein`
+Move `geom_bottleneck` to `tstop/ext/geom_dist/bottleneck` 
+
+Move `geom_matching` to `tstop/ext/geom_dist/wasserstein` 
+
 
 From David M. Mount and Sunil Arya (University of Maryland, College Park, Maryland)
 
@@ -63,3 +65,7 @@ Add `tstop/python` to the `PYTHONPATH` environment variable
 Documentation: `tstop/python/persistence/README.md`
 
 Tutorial:`tstop/python/persistence/tutorial.md`
+
+# Data
+
+Time-series datasets and precomputed topological features coming soon!
