@@ -1,4 +1,4 @@
-#TSTOP
+#Time-series Topology (TSTOP)
 Release Date: June 2016
 
 This project contains the source code and datasets for the time-series topology data analysis framework for time-series characterization and classification as described in the paper:
@@ -62,9 +62,9 @@ Add `tstop/python` to the `PYTHONPATH` environment variable
 
 # Documentation and Tutorial
 
-Documentation: `tstop/python/persistence/README.md`
+[Runtime Documentation!] (tstop/python/persistence/README.md)
 
-Tutorial:`tstop/python/persistence/tutorial.md`
+[Time-series Topology Tutorial!] (tstop/python/persistence/tutorial.md)
 
 # Data
 
