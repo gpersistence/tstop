@@ -1,4 +1,4 @@
-#Time-series Topology (TSTOP)
+#Time-series Topology (TS-TOP)
 Release Date: June 2016
 
 This project contains the source code and datasets for the time-series topology data analysis  tool suite for time-series characterization and classification as described in the paper:
