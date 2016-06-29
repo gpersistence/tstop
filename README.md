@@ -62,9 +62,10 @@ Add `tstop/python` to the `PYTHONPATH` environment variable
 
 # Documentation and Tutorial
 
-For detailed documentation please see: [Runtime Documentation] (python/persistence/README.md)
+For detailed documentation please see: [Documentation] (python/persistence/README.md)
 
 For a short tutorial please see: [Time-series Topology Tutorial] (python/persistence/tutorial.md)
+
 
 # Data
 
