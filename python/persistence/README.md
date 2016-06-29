@@ -4,6 +4,9 @@ This directory contains a suite of tools used to explore methods of
 machine learning using time varying data, including Topological
 Persistence Diagrams and similarity and distance measures on them.
 
+
+Overview of class hierarchy and flow: [Hierarchy] (class_hierarchy.pdf)
+
 ## Data Types
 
 The definitions for all data types used in the tstop project are
