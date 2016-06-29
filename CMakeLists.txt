@@ -1,4 +1,4 @@
-PROJECT(dynatopo)
+PROJECT(tstop)
 cmake_minimum_required(VERSION 2.8)
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR})
 FIND_PACKAGE(Boost REQUIRED COMPONENTS serialization)
@@ -15,5 +15,5 @@ if(OPENMP_FOUND)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif()
 
-INCLUDE_DIRECTORIES(${dynatopo_SOURCE_DIR} ${Boost_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS} /usr/include/eigen3)
+INCLUDE_DIRECTORIES(${tstop_SOURCE_DIR} ${Boost_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS} /usr/include/eigen3)
 SUBDIRS(ext geometry topology)
