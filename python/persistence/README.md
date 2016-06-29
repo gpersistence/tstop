@@ -1,4 +1,4 @@
-# Tool Suite for Exploring Learning Techniques on Time Varying Data
+# TS-TOP: Tool Suite for Exploring Topology and Learning Techniques on Time Varying Data
 
 This directory contains a suite of tools used to explore methods of
 machine learning using time varying data, including Topological

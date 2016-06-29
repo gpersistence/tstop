@@ -1,7 +1,7 @@
 #Time-series Topology (TSTOP)
 Release Date: June 2016
 
-This project contains the source code and datasets for the time-series topology data analysis framework for time-series characterization and classification as described in the paper:
+This project contains the source code and datasets for the time-series topology data analysis  tool suite for time-series characterization and classification as described in the paper:
 
 Seversky, Lee M., Shelby Davis, and Matthew Berger. 
 "On Time-Series Topological Data Analysis: New Data and Opportunities." 
