@@ -1,0 +1,29 @@
+include_directories(${dynatopo_SOURCE_DIR}/topology ${dynatopo_SOURCE_DIR}/ext/geom_dist/wasserstein/include ${dynatopo_SOURCE_DIR}/ext/geom_dist/bottleneck/include ${Boost_INCLUDE_DIR})
+#file(GLOB topology_sources ${dynatopo_SOURCE_DIR}/topology/*.cpp ${dynatopo_SOURCE_DIR}/topology/munkres/*.cpp ${dynatopo_SOURCE_DIR}/topology/*.h ${dynatopo_SOURCE_DIR}/topology/munkres/*.h
+#	${dynatopo_SOURCE_DIR}/topology/distance_learning/*.h ${dynatopo_SOURCE_DIR}/topology/distance_learning/*.cpp)
+file(GLOB topology_sources ${dynatopo_SOURCE_DIR}/topology/*.cpp ${dynatopo_SOURCE_DIR}/topology/munkres/*.cpp ${dynatopo_SOURCE_DIR}/topology/*.h ${dynatopo_SOURCE_DIR}/topology/munkres/*.h)
+
+find_package(PythonInterp 2.7)
+find_package(PythonLibs 2.7)
+find_package(NumPy 1.7.1)
+find_package(Boost 1.46 COMPONENTS python)
+
+set(CMAKE_CXX_FLAGS "-std=c++11")
+if(OPENMP_FOUND)
+	message("Got OpenMP!")
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+endif()
+include_directories(${PYTHON_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+add_library(topology SHARED ${topology_sources})
+target_link_libraries(topology geometry wasserstein bottleneck ${PYTHON_LIBRARIES} ${Boost_LIBRARIES})
+add_dependencies(topology ann geometry)
+
+add_library(py_persistence SHARED python/py_persistence.cpp)
+target_link_libraries(py_persistence topology geometry wasserstein bottleneck ${PYTHON_LIBRARIES} ${Boost_LIBRARIES})
+add_dependencies(py_persistence topology geometry)
+set_target_properties(py_persistence PROPERTIES PREFIX "" OUTPUT_NAME "py_persistence")
+
+set(__linkname "${dynatopo_SOURCE_DIR}/python/persistence/py_persistence.so")
+Add_custom_command(TARGET py_persistence POST_BUILD COMMAND ln -sf $<TARGET_LINKER_FILE:py_persistence> "${__linkname}")
+#set_directory_properties(PROPERTIES ADDITIONAL_CLEAN_FILES "${__linkname}")
