@@ -34,16 +34,13 @@ from persistence.KernelLearning import KernelLearning
 
 outputs = []
 hosts = dict(#[("name-%s" % i,    ("ip-address", number of threads in a pool)) for i in range(number of processes)] +
-             [("lee-%s" % i,    ("128.132.60.57",  1)) for i in range(32-4)] +
-             [("gpu-1-%s" % i,  ("128.132.60.49",  1)) for i in range(48-4)] +
-             [("gpu-2-%s" % i,  ("128.132.60.125", 1)) for i in range(32-4)] +
-             [("matt-%s" % i,   ("128.132.60.18",  1)) for i in range(28-4)] + 
+             [("localhost-%s" % i,    ("127.0.0.1",  1)) for i in range(4)] + 
              []
 )
 in_progress = dict([(key, None) for key in hosts.keys()])
 
 # for example, get all segment files in a directory and generate persistence
-Segments = subprocess.check_output(["find", "/mnt/data2/topo_ts/2016-02-17-UCR2015", "-name", "*Segments.json.gz"])
+Segments = subprocess.check_output(["find", "~/2016-02-17-UCR2015", "-name", "*Segments.json.gz"])
 Segments = [k.strip() for k in Segments.split()]
 Segments.sort()
 
@@ -87,7 +84,8 @@ while len(tasks) > len(done) :
             time.sleep(10)
 
     if index < len(tasks)  :
-        p_cmd = ['ssh', hosts[target][0], "LD_LIBRARY_PATH=:/home/daviss/.local/lib", "PYTHONPATH=/mnt/data2/topo_ts/dynatopo/python:/home/daviss/.local/lib/python2.7/site-packages:/home/davis/.local/lib/python2.7/dist-packages"] + tasks[index] + ["--pool", str(hosts[target][1])]
+        # Configure with your LD_LIBRARY_PATH and PYTHONPATH
+        p_cmd = ['ssh', hosts[target][0], "LD_LIBRARY_PATH=.:", "PYTHONPATH=.:"] + tasks[index] + ["--pool", str(hosts[target][1])]
         # Check to see if there's a None value in the queue (probably an uncaught error)
         if reduce(lambda x, y: x and y != None, p_cmd, True) :
             print " ".join(p_cmd)
