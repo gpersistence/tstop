@@ -1,7 +1,5 @@
-include_directories(${dynatopo_SOURCE_DIR}/topology ${dynatopo_SOURCE_DIR}/ext/geom_dist/wasserstein/include ${dynatopo_SOURCE_DIR}/ext/geom_dist/bottleneck/include ${Boost_INCLUDE_DIR})
-#file(GLOB topology_sources ${dynatopo_SOURCE_DIR}/topology/*.cpp ${dynatopo_SOURCE_DIR}/topology/munkres/*.cpp ${dynatopo_SOURCE_DIR}/topology/*.h ${dynatopo_SOURCE_DIR}/topology/munkres/*.h
-#	${dynatopo_SOURCE_DIR}/topology/distance_learning/*.h ${dynatopo_SOURCE_DIR}/topology/distance_learning/*.cpp)
-file(GLOB topology_sources ${dynatopo_SOURCE_DIR}/topology/*.cpp ${dynatopo_SOURCE_DIR}/topology/munkres/*.cpp ${dynatopo_SOURCE_DIR}/topology/*.h ${dynatopo_SOURCE_DIR}/topology/munkres/*.h)
+include_directories(${tstop_SOURCE_DIR}/topology ${tstop_SOURCE_DIR}/ext/geom_dist/wasserstein/include ${tstop_SOURCE_DIR}/ext/geom_dist/bottleneck/include ${Boost_INCLUDE_DIR})
+file(GLOB topology_sources ${tstop_SOURCE_DIR}/topology/*.cpp ${tstop_SOURCE_DIR}/topology/munkres/*.cpp ${tstop_SOURCE_DIR}/topology/*.h ${tstop_SOURCE_DIR}/topology/munkres/*.h)
 
 find_package(PythonInterp 2.7)
 find_package(PythonLibs 2.7)
@@ -24,6 +22,6 @@ target_link_libraries(py_persistence topology geometry wasserstein bottleneck ${
 add_dependencies(py_persistence topology geometry)
 set_target_properties(py_persistence PROPERTIES PREFIX "" OUTPUT_NAME "py_persistence")
 
-set(__linkname "${dynatopo_SOURCE_DIR}/python/persistence/py_persistence.so")
+set(__linkname "${tstop_SOURCE_DIR}/python/persistence/py_persistence.so")
 Add_custom_command(TARGET py_persistence POST_BUILD COMMAND ln -sf $<TARGET_LINKER_FILE:py_persistence> "${__linkname}")
 #set_directory_properties(PROPERTIES ADDITIONAL_CLEAN_FILES "${__linkname}")
