@@ -1,5 +1,5 @@
 include_directories(${tstop_SOURCE_DIR}/topology ${tstop_SOURCE_DIR}/ext/geom_dist/wasserstein/include ${tstop_SOURCE_DIR}/ext/geom_dist/bottleneck/include ${Boost_INCLUDE_DIR})
-file(GLOB topology_sources ${tstop_SOURCE_DIR}/topology/*.cpp ${tstop_SOURCE_DIR}/topology/munkres/*.cpp ${tstop_SOURCE_DIR}/topology/*.h ${tstop_SOURCE_DIR}/topology/munkres/*.h)
+file(GLOB topology_sources ${tstop_SOURCE_DIR}/topology/*.cpp ${tstop_SOURCE_DIR}/topology/*.h)
 
 find_package(PythonInterp 2.7)
 find_package(PythonLibs 2.7)
