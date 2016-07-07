@@ -28,7 +28,6 @@ from persistence.ScaleSpaceSimilarity import ScaleSpaceSimilarity
 from persistence.PersistenceKernel import PersistenceKernel
 from persistence.RBFKernel import RBFKernel
 from persistence.EuclideanDistances import EuclideanDistances
-from persistence.DTWDistances import DTWDistances
 from persistence.DistanceLearning import DistanceLearning
 from persistence.KernelLearning import KernelLearning
 
