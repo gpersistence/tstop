@@ -79,8 +79,6 @@ class CanvasFrame(wx.Frame):
                 self.filedict[-1]['label'] = " Chaotic Invariant Features"
             elif "ScaleSpaceSimilarityLearning" in f :
                 self.filedict[-1]['label'] = "Scale Space Similarity"
-            elif "DTWDistancesLearning" in f :
-                self.filedict[-1]['label'] = "DTW Distance"
             elif "EuclideanDistancesLearning" in f :
                 self.filedict[-1]['label'] = "Euclidean Distance"
             if (len(correct) > 1) :

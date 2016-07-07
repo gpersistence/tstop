@@ -31,7 +31,7 @@ from persistence.DistanceLearning import DistanceLearning
 from persistence.KernelLearning import KernelLearning
 from persistence.RBFKernel import RBFKernel
 from persistence.EuclideanDistances import EuclideanDistances
-from persistence.DTWDistances import DTWDistances
+
 if __name__ == "__main__" :
     parser = argparse.ArgumentParser(description="Utility to run common variations of learning tasks on a configuration file, generating segments, distances, kernels, and learning results as appropriate")
     parser.add_argument("--config")
@@ -129,16 +129,4 @@ if __name__ == "__main__" :
                                  "--train-test-partitions", partition_filename]
     subprocess.call(distance_learning_command)
 
-    #DTWDistances
-    dtw_distance_command = ["python", "-u", "-O", "-m", "persistence.DTWDistances", 
-                            "--pool", str(args.pool),
-                            "--infile", windowless_segment_filename]
-    subprocess.call(dtw_distance_command)
-    dtw_distance_filename = DTWDistances.get_distances_filename(windowless_config)
-
-    #DTW DistanceLearning
-    distance_learning_command = ["python", "-u", "-O", "-m", "persistence.DistanceLearning",
-                                 "--infile", dtw_distance_filename,
-                                 "--train-test-partitions", partition_filename]
-    subprocess.call(distance_learning_command)
 

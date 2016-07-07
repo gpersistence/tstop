@@ -273,26 +273,6 @@ optional arguments:
   -p POOL, --pool POOL  Threads of computation to use
 ```
 
-### DTWDistances
-
-Measures the Dynamic Time Warping distance between all pairs of
-Segments
-
-```sh
-$ python -m persistence.DTWDistances --help
-usage: DTWDistances.py [-h] [-i INFILE] [-o OUTFILE] [-p POOL]
-
-Tool to generate Dynamic Time Warping distances based on segment data
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -i INFILE, --infile INFILE
-                        Input JSON Segment File
-  -o OUTFILE, --outfile OUTFILE
-                        Output JSON Distances File
-  -p POOL, --pool POOL  Threads of computation to use
-```
-
 ### EuclideanDistances
 
 Measures the Euclidean distance between all pairs of Segments
