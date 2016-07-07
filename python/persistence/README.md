@@ -231,22 +231,6 @@ optional arguments:
   -p POOL, --pool POOL
 ```
 
-### DCTPost
-
-Performs a Discrete Cosine Transform on each window of each segment
-
-```sh
-$ python -m persistence.DCTPost --help
-usage: DCTPost.py [-h] [-i INFILE] [-o OUTFILE]
-
-Post Processing tool for Segment Data
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -i INFILE, --infile INFILE
-  -o OUTFILE, --outfile OUTFILE
-```
-
 ### NormalizePost
 
 Normalizes each window of each segment.
@@ -261,24 +245,6 @@ optional arguments:
   -h, --help            show this help message and exit
   -i INFILE, --infile INFILE
   -o OUTFILE, --outfile OUTFILE
-```
-
-### PCAPost
-
-Performs Principal Component Analysis on each windowed segment 
-
-```sh
-$ python -m persistence.PCAPost --help
-usage: PCAPost.py [-h] [-i INFILE] [-o OUTFILE] [-p POST_PROCESS_ARG]
-
-Post Processing tool for Segment Data
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -i INFILE, --infile INFILE
-  -o OUTFILE, --outfile OUTFILE
-  -p POST_PROCESS_ARG, --post-process-arg POST_PROCESS_ARG
-                        Variance Threshold, a float between 0 and 1
 ```
 
 ## Distance Measures

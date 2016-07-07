@@ -30,7 +30,6 @@ from persistence.ScaleSpaceSimilarity import ScaleSpaceSimilarity
 from persistence.DistanceLearning import DistanceLearning
 from persistence.KernelLearning import KernelLearning
 from persistence.RBFKernel import RBFKernel
-from persistence.DCTPost import DCTPost
 from persistence.EuclideanDistances import EuclideanDistances
 from persistence.DTWDistances import DTWDistances
 if __name__ == "__main__" :
@@ -143,22 +142,3 @@ if __name__ == "__main__" :
                                  "--train-test-partitions", partition_filename]
     subprocess.call(distance_learning_command)
 
-    #DCT
-    windowless_config.post_process = "DCTPost"
-    dct_post_command = ["python", "-u", "-O", "-m", "persistence.DCTPost",
-                        "--infile", windowless_segment_filename]
-    subprocess.call(dct_post_command)
-    dct_post_filename = DCTPost.get_segment_filename(windowless_config)
-
-    #DCT EuclideanDistance
-    euclidean_distance_command = ["python", "-u", "-O", "-m", "persistence.EuclideanDistances",
-                                  "--pool", str(args.pool),
-                                  "--infile", dct_post_filename]
-    subprocess.call(euclidean_distance_command)
-    euclidean_distance_filename = EuclideanDistances.get_distances_filename(windowless_config)
-
-    #DCT Euclidean DistanceLearning
-    distance_learning_command = ["python", "-u", "-O", "-m", "persistence.DistanceLearning",
-                                 "--infile", euclidean_distance_filename,
-                                 "--train-test-partitions", partition_filename]
-    subprocess.call(distance_learning_command)
