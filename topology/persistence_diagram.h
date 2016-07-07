@@ -1,4 +1,4 @@
-//TSTOP
+///TSTOP
 //
 //This program is free software: you can redistribute it and/or modify
 //it under the terms of the GNU General Public License as published by
@@ -33,8 +33,6 @@
 #include <boost/graph/max_cardinality_matching.hpp>
 
 #include "../geometry/point_incs.h"
-#include "munkres/munkres.h"
-#include "munkres/HungarianDistance.h"
 
 struct PersistentPair  {
 	PersistentPair() : d(0), birth(0), death(0)  {}
@@ -129,8 +127,6 @@ class PersistenceDiagram  {
 
 		double bottleneck_distance(const PersistenceDiagram & _otherPD, int _d) const;
 		std::pair<std::vector<int>,std::vector<int> > bottleneck_matcher(const PersistenceDiagram & _otherPD, int _d) const;
-		std::pair<std::vector<int>,std::vector<int> > wasserstein_matching(const PersistenceDiagram & _otherPD, int _d, double _p=1) const;
-		double wasserstein_distance(const PersistenceDiagram & _otherPD, int _d, double _p=1) const;
 
 		int num_pairs() const { return all_pairs.size(); }
 		PersistentPair get_pair(int _i) const { return all_pairs[_i]; }

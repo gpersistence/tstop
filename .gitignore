@@ -2,3 +2,6 @@ CMakeCache.txt
 CMakeFiles
 Makefile
 cmake_install.cmake
+*.a
+*.so
+ext/geom_dist/wasserstein/wasserstein_dist

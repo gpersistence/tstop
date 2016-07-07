@@ -90,7 +90,6 @@ BOOST_PYTHON_MODULE(py_persistence)  {
     .def("sweep_persistence", &ZeroDimensionPersistence::sweep_persistence);
 
   def("ssk_similarity", &ScaleSpaceKernel::similarity);
-  def("match_points", &BottleneckDistance::match_points);
   def("dtw_nearest_neighbor", &DTW_python::nearest_neighbor);
   def("dtw_distance", &DTW_python::distance);
   def("persistence_landscape_distance", &Landscape::distance);
