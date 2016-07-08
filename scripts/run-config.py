@@ -102,7 +102,7 @@ if __name__ == "__main__" :
     rbf_kernel_filenames = []
     for gamma in parse_range("1e-6;1e6;10", t=float) :
         rbf_kernel_command = ["python", "-u", "-O", "-m", "persistence.RBFKernel", 
-                              "--pool", str(args.pool), "--gamma", "%g" % gamma, 
+                              "--pool", str(args.pool), "--kernel-gamma", "%g" % gamma, 
                               "--infile", windowless_segment_filename]
         windowless_config.kernel_gamma = gamma
         subprocess.call(rbf_kernel_command)
