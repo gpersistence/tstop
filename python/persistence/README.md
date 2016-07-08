@@ -76,7 +76,13 @@ An example configuration file corresponding to [the tutorial](tutorial.md)
 "segment_stride": 500, 
 "label_index": 1, 
 "out_directory": "/mnt/data2/topo_ts/2015-11-19-PAMAP", 
-"segment_size": 1000
+"segment_size": 1000,
+"learning_split": 0.5, 
+"learning_iterations": 100, 
+"cv_iterations": 5,
+"kernel_scale": 1.0,
+"learning_C": 1.0,
+"max_simplices": 1000000
 }
 ```
 
