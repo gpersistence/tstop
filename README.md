@@ -1,7 +1,7 @@
 #Time-series Topology (TS-TOP)
 Release Date: June 2016
 
-This project contains the source code and datasets for the time-series topology data analysis  tool suite for time-series characterization and classification as described in the  [Paper](http://www.cv-foundation.org//openaccess/content_cvpr_2016_workshops/w23/papers/Strait_Bayesian_Model-Based_Automatic_CVPR_2016_paper.pdf) :
+This project contains the source code and datasets for the time-series topology data analysis  tool suite for time-series characterization and classification as described in the  [paper](http://www.cv-foundation.org//openaccess/content_cvpr_2016_workshops/w23/papers/Seversky_On_Time-Series_Topological_CVPR_2016_paper.pdf) :
 
 Seversky, Lee M., Shelby Davis, and Matthew Berger. 
 "On Time-Series Topological Data Analysis: New Data and Opportunities." 
