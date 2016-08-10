@@ -42,11 +42,12 @@ Download [ANN](http://www.cs.umd.edu/~mount/ANN/) and extract to `tstop/ext/ANN`
 
 Install [boost](http://www.boost.org) python and serialization libraries,
 [scikit-learn](http://scikit-learn.org/stable/install.html),
-[matplotlib](http://matplotlib.org/), and
-
+[matplotlib](http://matplotlib.org/), 
+[Eigen 3](http://eigen.tuxfamily.org/index.php),
+[cmake](https://cmake.org/), and optionally [wxPython](https://wxpython.org/)
 On machines with `apt-get`:
 ```sh
-$ sudo apt-get install libboost-python-dev libboost-serialization-dev python-matplotlib python-sklearn libeigen3-dev cmake
+$ sudo apt-get install libboost-python-dev libboost-serialization-dev python-matplotlib python-sklearn python-wxgtk3.0-dev libeigen3-dev cmake
 ```
 
 
