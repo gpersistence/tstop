@@ -46,7 +46,7 @@ Install [boost](http://www.boost.org) python and serialization libraries,
 
 On machines with `apt-get`:
 ```sh
-$ sudo apt-get install libboost-python-dev libboost-serialization-dev python-matplotlib python-sklearn
+$ sudo apt-get install libboost-python-dev libboost-serialization-dev python-matplotlib python-sklearn libeigen3-dev cmake
 ```
 
 
